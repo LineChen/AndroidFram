@@ -1,5 +1,7 @@
-package network;
+package com.beiing.baseframe.network;
 
+
+import android.util.Log;
 
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.Types;
@@ -7,6 +9,9 @@ import org.xutils.http.app.ResponseParser;
 import org.xutils.http.request.UriRequest;
 
 import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,18 +28,6 @@ public class JsonResponseParser implements ResponseParser {
     @Override
     public Object parse(Type resultType, Class<?> resultClass, String result) throws Throwable {
         Moshi moshi = new Moshi.Builder().build();
-
-        if (result.trim().startsWith("[") && result.trim().endsWith("]")) {
-            Class clz = Object.class;
-            Pattern pattern = Pattern.compile("\\S+\\<(\\S+)\\>");
-            Matcher matcher = pattern.matcher(resultType.toString());
-            if (matcher.matches()) {
-                clz = Class.forName(matcher.group(1));
-            }
-            Type type = Types.newParameterizedType(resultClass, clz);
-            return moshi.adapter(type).fromJson(result);
-        } else {
-            return moshi.adapter(resultType).fromJson(result);
-        }
+        return moshi.adapter(resultType).fromJson(result);
     }
 }

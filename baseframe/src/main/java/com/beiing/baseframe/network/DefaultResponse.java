@@ -1,4 +1,4 @@
-package network;
+package com.beiing.baseframe.network;
 
 import android.text.TextUtils;
 
@@ -7,7 +7,7 @@ import org.xutils.http.annotation.HttpResponse;
 import java.util.Map;
 /**
  * Created by chenliu on 2016/4/13.
- * 描述：
+ * 描述：根据服务器传过来的参数配置
  */
 
 @HttpResponse(parser = JsonResponseParser.class)

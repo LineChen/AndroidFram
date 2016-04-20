@@ -1,4 +1,4 @@
-package network;
+package com.beiing.baseframe.network;
 
 import org.xutils.common.Callback;
 import org.xutils.ex.HttpException;
@@ -7,6 +7,11 @@ import org.xutils.ex.HttpException;
  * 描述：扩展网络请求Callback
  */
 public abstract class HttpCallback<ResultType> implements Callback.CommonCallback<ResultType> {
+
+    @Override
+    public void onSuccess(ResultType result) {
+
+    }
 
     @Override
     public void onError(Throwable ex, boolean isOnCallback) {

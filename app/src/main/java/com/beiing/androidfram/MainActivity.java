@@ -1,20 +1,23 @@
 package com.beiing.androidfram;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
 
-import org.xutils.common.Callback;
 import org.xutils.ex.HttpException;
 import org.xutils.http.RequestParams;
-import org.xutils.x;
+
+import com.beiing.androidfram.bean.Category;
+import com.beiing.baseframe.network.DefaultResponse;
+import com.beiing.baseframe.network.HttpCallback;
+import com.beiing.baseframe.network.HttpUtil;
+import com.beiing.baseframe.network.JsonParseUtil;
+import com.google.gson.Gson;
 
 import java.util.List;
-
-import network.DefaultResponse;
-import network.HttpCallback;
-import network.HttpUtil;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         HttpUtil.newInstance().with(this, false)
-                .doGet(new RequestParams("http://mobile.ximalaya.com/m/category_tag_menu"), new HttpCallback<DefaultResponse>() {
+                .doGet(new RequestParams("http://mobile.ximalaya.com/m/category_tag_menu"), new HttpCallback<String>() {
             @Override
-            public void onSuccess(DefaultResponse result) {
+            public void onSuccess(String result) {
                 Log.e("====", "result:" + result);
             }
 
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             // ...
                             Log.e("====", "onError:" + responseMsg + "," + errorResult);
                         } else {
-                            Log.e("====", "onError:");
+                            Log.e("====", "onError:" + ex.getMessage());
                         }
 
                     }
@@ -86,5 +89,9 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 
+    }
+
+    public void goto1(View view) {
+        startActivity(new Intent(this, FirstActivity.class));
     }
 }

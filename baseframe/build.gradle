@@ -24,4 +24,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.squareup.moshi:moshi:1.1.0'
     compile project(path: ':xutils3')
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'//侧滑finish Activity
 }

@@ -1,4 +1,4 @@
-package com.beiing.androidfram.application;
+package com.beiing.baseframe.application;
 
 import android.app.Application;
 

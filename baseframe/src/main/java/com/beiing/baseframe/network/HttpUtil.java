@@ -1,4 +1,4 @@
-package network;
+package com.beiing.baseframe.network;
 
 import android.app.Activity;
 import android.content.Context;
