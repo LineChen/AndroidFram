@@ -2,6 +2,7 @@ package com.beiing.androidfram;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.beiing.baseframe.bases.BaseActivity0;
 
@@ -18,22 +19,10 @@ public class FirstActivity extends BaseActivity0 {
     }
 
     @Override
-    protected void initViews() {
-
+    public void initData() {
+        super.initData();
+        Log.e("=====", "I am the best.");
     }
 
-    @Override
-    protected void initData() {
 
-    }
-
-    @Override
-    protected void setListener() {
-
-    }
-
-    @Override
-    protected void getNetData() {
-
-    }
 }

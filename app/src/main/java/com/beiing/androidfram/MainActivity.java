@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HttpUtil.newInstance().with(this, false)
+        HttpUtil.newInstance().with(this, true)
                 .doGet(new RequestParams("http://mobile.ximalaya.com/m/category_tag_menu"), new HttpCallback<String>() {
             @Override
             public void onSuccess(String result) {

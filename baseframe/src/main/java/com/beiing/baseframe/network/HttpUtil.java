@@ -3,6 +3,9 @@ package com.beiing.baseframe.network;
 import android.app.Activity;
 import android.content.Context;
 
+import com.beiing.baseframe.utils.LoadingDialogUtil;
+import com.beiing.baseframe.widgets.LoadingDialog;
+
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
@@ -13,7 +16,7 @@ import org.xutils.x;
  */
 public class HttpUtil {
 
-    private static Callback.Cancelable mCancelable;
+    private  Callback.Cancelable mCancelable;
     private Context context;
     private boolean isShowDialog;
 
@@ -35,6 +38,7 @@ public class HttpUtil {
             if(context instanceof Activity){
                 if(!((Activity)context).isFinishing()){
                     // TODO 显示加载对话框
+                    LoadingDialogUtil.showDialog(context);
                 }
             }
         }
@@ -46,6 +50,7 @@ public class HttpUtil {
             if(context instanceof Activity){
                 if(!((Activity)context).isFinishing()){
                     // TODO 显示加载对话框
+                    LoadingDialogUtil.showDialog(context);
                 }
             }
         }
@@ -57,6 +62,7 @@ public class HttpUtil {
             if(context instanceof Activity){
                 if(!((Activity)context).isFinishing()){
                     // TODO 显示加载对话框
+                    LoadingDialogUtil.showDialog(context);
                 }
             }
         }
