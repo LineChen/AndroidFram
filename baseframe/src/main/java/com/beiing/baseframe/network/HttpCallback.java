@@ -25,12 +25,12 @@ public abstract class HttpCallback<ResultType> implements Callback.CommonCallbac
     @Override
     public void onCancelled(CancelledException cex) {
         //TODO : 统一关闭加载对话框
-//        LoadingDialogUtil.dismissDialog();
+        LoadingDialogUtil.dismissDialog();
     }
 
     @Override
     public void onFinished() {
         //TODO : 统一关闭加载对话框
-//        LoadingDialogUtil.dismissDialog();
+        LoadingDialogUtil.dismissDialog();
     }
 }

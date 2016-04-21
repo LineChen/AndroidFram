@@ -1,57 +1,39 @@
 package com.beiing.baseframe.utils;
 
-import com.tencent.bugly.crashreport.BuglyLog;
-
-import cn.yayi365.yayi.bean.ConversationTop;
-import cn.yayi365.yayi.config.Constant;
-
 import org.xutils.DbManager;
 import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
- * Created by one_v on 2016/3/9 13:26.
+ * Created by chenliu on 2016/4/21.
+ * 描述：数据库操作工具
  */
 public class DBUtil {
     private static DbManager.DaoConfig config;
 
     private static DbManager manager;
-
-    private static DBUtil instance;
+    private static final String DB_NAME = "app_db";
 
     private DBUtil() {
     }
 
     public static DBUtil getInstance() {
-        if (null == instance) {
-            instance = new DBUtil();
-        }
         init();
-        return instance;
+        return DBUtilHolder.instance;
+    }
+
+    private static class DBUtilHolder{
+        private static final DBUtil instance = new DBUtil();
     }
 
     public static void init() {
         if (null == config)
             config = new DbManager.DaoConfig()
-                    .setDbName(Constant.DB_NAME_DEFAULT)
-                    .setDbVersion(2)
-                    .setDbUpgradeListener(new DbManager.DbUpgradeListener() {
-                        @Override
-                        public void onUpgrade(DbManager db, int oldVersion, int newVersion) {
-                            switch (newVersion) {
-                                case 2:
-                                    try {
-                                        db.addColumn(ConversationTop.class, "user_id");
-                                    } catch (DbException e) {
-                                        e.printStackTrace();
-                                    }
-                            }
-                        }
-                    })
+                    .setDbName(DB_NAME)
+                    .setDbVersion(1)
                     .setDbOpenListener(new DbManager.DbOpenListener() {
                         @Override
                         public void onDbOpened(DbManager db) {
@@ -64,12 +46,20 @@ public class DBUtil {
 
     public void save(Object obj) {
         try {
-//            manager.save(obj);
+            manager.save(obj);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveOrupdate(Object obj){
+        try {
             manager.saveOrUpdate(obj);
         } catch (DbException e) {
             e.printStackTrace();
         }
     }
+
 
     public void delete(Object obj) {
         try {
@@ -86,7 +76,6 @@ public class DBUtil {
             }
         } catch (DbException e) {
             e.printStackTrace();
-            BuglyLog.e("wwwwwwwwwwwwwwww", "e---------->" + e.getMessage());
         }
         return null;
     }
