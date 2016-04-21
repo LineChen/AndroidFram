@@ -3,8 +3,11 @@ package com.beiing.baseframe.utils;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.beiing.baseframe.R;
 import com.beiing.baseframe.widgets.titanicloading.Titanic;
@@ -27,6 +30,13 @@ public class LoadingDialogUtil {
             new Titanic().start(tv);
             mDialog.setContentView(dialog);
             mDialog.setCancelable(true);
+            Window window = mDialog.getWindow();
+            window.setBackgroundDrawableResource(R.drawable.bg_loading_dialog);
+            WindowManager.LayoutParams lp = window.getAttributes();
+            DisplayMetrics dm = context.getResources().getDisplayMetrics();
+            lp.height = (int) (80 * dm.density);
+            lp.width = (int) (160 * dm.density);
+            window.setAttributes(lp);
             mDialog.show();
         }
     }
