@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".FirstActivity"></activity>
+
+        <activity android:name=".test_recyclerview.MultiItemRvActivity"/>
+        <activity android:name=".test_recyclerview.RecyclerViewActivity"/>
     </application>
 
 </manifest>

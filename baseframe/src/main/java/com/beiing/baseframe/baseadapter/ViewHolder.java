@@ -1,4 +1,4 @@
-package com.beiing.baseframe.adapter;
+package com.beiing.baseframe.baseadapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

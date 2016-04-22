@@ -1,4 +1,4 @@
-package com.beiing.baseframe.adapter.forlistview;
+package com.beiing.baseframe.baseadapter.forlistview;
 
 public interface MultiItemTypeSupport<T>
 {

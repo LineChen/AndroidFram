@@ -1,4 +1,4 @@
-package com.beiing.baseframe.adapter.forlistview;
+package com.beiing.baseframe.baseadapter.forlistview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 
-import com.beiing.baseframe.adapter.ViewHolder;
+import com.beiing.baseframe.baseadapter.ViewHolder;
 
 import java.util.List;
 

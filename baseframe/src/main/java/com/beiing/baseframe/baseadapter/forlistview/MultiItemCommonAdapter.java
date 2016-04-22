@@ -1,10 +1,10 @@
-package com.beiing.baseframe.adapter.forlistview;
+package com.beiing.baseframe.baseadapter.forlistview;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.beiing.baseframe.adapter.ViewHolder;
+import com.beiing.baseframe.baseadapter.ViewHolder;
 
 import java.util.List;
 
