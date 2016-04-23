@@ -3,6 +3,7 @@
     package="com.beiing.androidfram">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,8 +23,12 @@
         </activity>
         <activity android:name=".FirstActivity"></activity>
 
-        <activity android:name=".test_recyclerview.MultiItemRvActivity"/>
-        <activity android:name=".test_recyclerview.RecyclerViewActivity"/>
+        <activity android:name=".test_recyclerview.activity.ControlActivity"/>
+        <activity android:name=".test_recyclerview.activity.GridLayoutActivity"/>
+        <activity android:name=".test_recyclerview.activity.StaggerActivity"/>
+        <activity android:name=".test_recyclerview.activity.SimpleRecyclerViewActivity"/>
+
+
     </application>
 
 </manifest>

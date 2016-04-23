@@ -16,14 +16,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RecyclerViewActivity"
+        android:text="testRecyclerView"
         android:textAllCaps="false"
-        android:onClick="gotoRecyclerViewActivity"/>
+        android:onClick="testRecyclerView"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MultiItemRvActivity"
-        android:textAllCaps="false"
-        android:onClick="gotoMultiItemRvActivity"/>
 </LinearLayout>
